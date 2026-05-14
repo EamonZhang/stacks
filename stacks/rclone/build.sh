@@ -8,8 +8,9 @@ function build() {
   generate-stack-path
   BIN_DIR="${DATA_DIR}"/bin
   mkdir -p "${BIN_DIR}"
-  version=$(echo ${STACK_VERSION} | awk -F "." '{print "RELEASE."$1"-"$2"-"$3"T"$4"-"$5"-"$6"Z"}')
-  curl -fsSL -o "${BIN_DIR}"/"${STACK_NAME}" https://dl.min.io/client/mc/release/linux-${OS_ARCH}/archive/mc.${version}
+  rclone_zipname="rclone-v${STACK_VERSION}-linux-${OS_ARCH}"
+  curl -SsL https://github.com/rclone/rclone/releases/download/v${STACK_VERSION}/${rclone_zipname}.zip -o rclone.zip \
+    && unzip -j rclone.zip ${rclone_zipname}/rclone -d "${BIN_DIR}"
   chmod +x "${BIN_DIR}"/"${STACK_NAME}"
 }
 

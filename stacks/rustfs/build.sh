@@ -8,9 +8,13 @@ function build() {
   generate-stack-path
   BIN_DIR="${DATA_DIR}"/bin
   mkdir -p "${BIN_DIR}"
-  version=$(echo ${STACK_VERSION} | awk -F "." '{print "RELEASE."$1"-"$2"-"$3"T"$4"-"$5"-"$6"Z"}')
-  curl -fsSL -o "${BIN_DIR}"/"${STACK_NAME}" https://dl.min.io/server/minio/release/linux-${OS_ARCH}/archive/minio.${version}
+
+  curl -fsSL -o rustfs.zip https://github.com/rustfs/rustfs/releases/download/${STACK_VERSION}/rustfs-linux-$(uname -m)-gnu-v${STACK_VERSION}.zip \
+    && unzip -j rustfs.zip -d "${BIN_DIR}" \
+    && rm rustfs.zip
+
   chmod +x "${BIN_DIR}"/"${STACK_NAME}"
+  upx --lzma --best "${BIN_DIR}"/*
 }
 
 # call build stack

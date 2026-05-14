@@ -60,7 +60,7 @@ repo_info_table = {
         "name": "jmx_exporter",
         "type": "github",
         "owner": "prometheus",
-        "match": "^parent-[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
+        "match": "^[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
     },
     "caddy": {
         "name": "caddy",
@@ -158,18 +158,6 @@ repo_info_table = {
         "owner": "kubernetes",
         "match": "^kubernetes-[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
     },
-    "mc": {
-        "name": "mc",
-        "type": "github",
-        "owner": "minio",
-        "match": "^RELEASE\.[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}Z$",
-    },
-    "minio": {
-        "name": "minio",
-        "type": "github",
-        "owner": "minio",
-        "match": "^RELEASE\.[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}-[0-9]{2}-[0-9]{2}Z$",
-    },
     "nginx": {
         "name": "nginx",
         "type": "github",
@@ -222,6 +210,12 @@ repo_info_table = {
         "name": "rabbitmq-server",
         "type": "github",
         "owner": "rabbitmq",
+        "match": "^v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
+    },
+    "rclone": {
+        "name": "rclone",
+        "type": "github",
+        "owner": "rclone",
         "match": "^v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
     },
     "redis": {
@@ -374,8 +368,14 @@ repo_info_table = {
         "owner": "opensearch-project",
         "match": "^[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
     },
+    "rustfs": {
+        "name": "rustfs",
+        "type": "github",
+        "owner": "rustfs",
+        "match": "^[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
+    },
     "opentelemetry-collector": {
-        "name": "opentelemetry-collector",
+        "name": "opentelemetry-collector-releases",
         "type": "github",
         "owner": "open-telemetry",
         "match": "^v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
@@ -456,6 +456,18 @@ repo_info_table = {
         "name": "fluent-bit-manager",
         "type": "github",
         "owner": "drycc-addons",
+        "match": "v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
+    },
+    "headscale": {
+        "name": "headscale",
+        "type": "github",
+        "owner": "juanfont",
+        "match": "v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
+    },
+    "tailscale": {
+        "name": "tailscale",
+        "type": "github",
+        "owner": "tailscale",
         "match": "v[0-9]{1,}\.[0-9]{1,}\.[0-9]{1,}$",
     },
 }
