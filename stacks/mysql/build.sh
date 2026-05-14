@@ -31,7 +31,8 @@ function build() {
     bison \
     autoconf \
     automake \
-    libtool
+    libtool \
+    libtirpc-dev
 
   # curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.40.0
   ## download mysql.tar
